@@ -3,6 +3,7 @@ package com.example.metastep.restcontroller;
 import com.example.metastep.business.TechnologiesBus;
 import com.example.metastep.model.Technologies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,12 +28,12 @@ public class TechnologiesRest {
         return technologiesBus.updateTechnologies(id, technology);
     }
 
-    @PostMapping(value = "new")
+    @PostMapping(value = "delete")
     public  void delete(int id){
         technologiesBus.delecteCat(id);
     }
 
-    @PostMapping(value = "new")
+    @GetMapping(value = "get")
     public List<Technologies> getList(){
         return technologiesBus.getAllTechnologies();
     }

@@ -25,12 +25,12 @@ public class ProjectRest {
         return projectBus.updateProject(id, project);
     }
 
-    @PostMapping(value = "new")
+    @PostMapping(value = "delete")
     public  void delete(int id){
          projectBus.delecteCat(id);
     }
 
-    @PostMapping(value = "new")
+    @PostMapping(value = "get")
     public List<Project> getList(){
         return projectBus.getAllProject();
     }
